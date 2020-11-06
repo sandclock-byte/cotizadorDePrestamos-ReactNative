@@ -19,14 +19,15 @@ export default function Form() {
                 />
             </View>
             <RNPickerSelect
-            onValueChange={(value) => console.log(value)}
-            items={[
-                { label: 'Football', value: 'football' },
-                { label: 'Baseball', value: 'baseball' },
-                { label: 'Hockey', value: 'hockey' },
-            ]}
-        />
-
+            style= {picketSelectStyles} 
+                onValueChange={(value) => console.log(value)}
+                items={[
+                    { label: '3 meses', value: 3 },
+                    { label: '6 meses', value: 6 },
+                    { label: '12 meses', value: 12 },
+                    { label: '24 meses', value: 24 },
+                ]}
+            />
         </View>
     )
 }
@@ -34,7 +35,7 @@ export default function Form() {
 const styles = StyleSheet.create({
     viewForm: {
         position: 'absolute',
-        bottom: -90,
+        bottom: 0,
         width: '85%',
         paddingHorizontal: 50,
         backgroundColor: colors.PRIMARY_COLOR_DARK,
@@ -64,5 +65,33 @@ const styles = StyleSheet.create({
     inputPorcentaje: {
         width: '40%',
         marginLeft: 5
+    }
+});
+
+const picketSelectStyles = StyleSheet.create({
+    inpuIOS: {
+        fontSize: 16,
+        paddingVertical: 12,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: 'grey',
+        borderRadius: 4,
+        color: 'black',
+        paddingRight: 30,
+        backgroundColor:'#FFF',
+        marginLeft: -5,
+        marginRight: -5
+    },
+    inputAndroid: {
+        fontSize: 16,
+        paddingVertical: 8,
+        paddingHorizontal: 10,
+        borderWidth: 0.5,
+        borderColor: 'grey',
+        borderRadius: 8,
+        color: 'black',
+        paddingRight: 30,
+        backgroundColor:'#FFF'
+        
     }
 });
